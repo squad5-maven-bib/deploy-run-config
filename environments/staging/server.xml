@@ -1,7 +1,26 @@
-<server>
+<?xml version="1.0" encoding="UTF-8"?>
+<server description="Struts2 Showcase 6.6.1 - HTTP only">
+
+    <!-- Struts needs Servlet + (typically) JSP -->
     <featureManager>
-        <feature>servlet-3.1</feature>
-        <feature>transportSecurity-1.0</feature>
+        <feature>servlet-4.0</feature>
+        <feature>jsp-2.3</feature>
+        <!-- Optional: health for basic readiness checks -->
+        <feature>mpHealth-4.0</feature>
     </featureManager>
-    <application name="app" context-root="/" location="ferret.war" type="war" />
+
+    <variable name="default.http.port" defaultValue="9080"/>
+    <variable name="default.https.port" defaultValue="9443"/>
+    <variable name="app.context.root" defaultValue="/showcase"/>
+    <!-- Access + server logs (tweak as needed) -->
+    <httpAccessLogging logFormat="combined"/>
+    <logging consoleLogLevel="INFO" maxFileSize="20" maxFiles="10"/>
+
+    <!-- Deploy the WAR placed under .../servers/strutsShowcase/apps/ -->
+    <webApplication
+        id="struts2-showcase"
+        name="struts2-showcase-6.6.1"
+        location="struts2-showcase-6.6.1.war"
+        contextRoot="${app.context.root}"/>
+
 </server>
