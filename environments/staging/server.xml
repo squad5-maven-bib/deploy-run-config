@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<server description="Struts2 Showcase 6.7.0">
+<server description="Struts2 Showcase 6.8.0">
 
-    <!-- Struts2 6.7.0 requires Java EE 8 features -->
+    <!-- Struts2 6.8.0 requires Java EE 8 features -->
     <featureManager>
         <feature>servlet-4.0</feature>
         <feature>jsp-2.3</feature>

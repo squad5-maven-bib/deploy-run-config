@@ -14,7 +14,7 @@ app:
   maven:
     groupId: org.apache.struts
     artifactId: struts2-showcase
-    version: 6.7.0
+    version: 6.8.0
     type: war
     validation:
       enabled: true
@@ -50,7 +50,7 @@ app:
   env:
     - name: SOME_ENV_VAR_NAME
       value: some_env_var_value
-
+  startupTimeout: 300
   # Set a list of Liberty variables for the application. 
   # Reference the variables in the server.xml using the 
   # ${some_liberty_variable_name} notation.
