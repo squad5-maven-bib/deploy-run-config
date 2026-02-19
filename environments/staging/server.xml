@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<server description="Struts2 Showcase 6.6.1 - HTTP only">
+<server description="Struts2 Showcase 6.7.0">
 
-    <!-- Struts needs Servlet + (typically) JSP -->
+    <!-- Struts2 6.7.0 requires Java EE 8 features -->
     <featureManager>
         <feature>servlet-4.0</feature>
         <feature>jsp-2.3</feature>
-        <!-- Optional: health for basic readiness checks -->
-        <feature>mpHealth-4.0</feature>
+        <feature>cdi-2.0</feature>
+        <feature>el-3.0</feature>
     </featureManager>
 
-    <variable name="default.http.port" defaultValue="9080"/>
-    <variable name="default.https.port" defaultValue="9443"/>
-    <variable name="app.context.root" defaultValue="/showcase"/>
-    <!-- Access + server logs (tweak as needed) -->
-    <httpAccessLogging logFormat="combined"/>
-    <logging consoleLogLevel="INFO" maxFileSize="20" maxFiles="10"/>
+    <httpEndpoint id="defaultHttpEndpoint" 
+                  httpPort="9080" 
+                  httpsPort="9443"/>
 
-    <!-- Deploy the WAR placed under .../servers/strutsShowcase/apps/ -->
-    <webApplication
+    <!-- Deploy the WAR - buildah creates it as struts2-showcase.war -->
+    <webApplication 
         id="struts2-showcase"
-        name="struts2-showcase-6.6.1"
-        location="struts2-showcase-6.6.1.war"
-        contextRoot="${app.context.root}"/>
+        name="struts2-showcase"
+        location="struts2-showcase.war"
+        contextRoot="/"/>
+    
+    <!-- Increase startup timeout for large applications -->
+    <applicationManager startTimeout="5m"/>
+    
+    <!-- Optional: Logging configuration -->
+    <logging consoleLogLevel="INFO" 
+             maxFileSize="20" 
+             maxFiles="10"/>
 
 </server>
