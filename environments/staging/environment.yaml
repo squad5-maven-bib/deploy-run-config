@@ -1,7 +1,7 @@
 #
 # Configuration for environment
 #
-version: 1.1.0
+version: 1.0
 app:
   # Set the build version ID to deploy for the "Build, deploy, and run" 
   # scenario. If the value is set to an empty string ("") the application
