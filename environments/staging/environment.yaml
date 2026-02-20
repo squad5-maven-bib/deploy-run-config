@@ -6,7 +6,7 @@ app:
   # Set the build version ID to deploy for the "Build, deploy, and run" 
   # scenario. If the value is set to an empty string ("") the application
   # is not deployed. 
-  # version: ""
+  # version: "" 
 
   # comment
   # Set the Maven coordinates of the Maven artifact to deploy for the
@@ -14,7 +14,7 @@ app:
   maven:
     groupId: org.apache.struts
     artifactId: struts2-showcase
-    version: 6.8.0
+    version: "7.0.0"
     type: war
     validation:
       enabled: true
