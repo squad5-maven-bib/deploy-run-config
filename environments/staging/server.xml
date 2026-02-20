@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<server description="Struts2 Showcase 6.8.0">
+<server description="Struts2 Showcase 7.0.0 - Jakarta EE 9">
 
-    <!-- Struts2 6.8.0 requires Java EE 8 features -->
+    <!-- Struts2 7.0.0 will use Jakarta EE 9+ (jakarta.* namespace) -->
     <featureManager>
-        <feature>servlet-4.0</feature>
-        <feature>jsp-2.3</feature>
-        <feature>cdi-2.0</feature>
-        <feature>el-3.0</feature>
+        <feature>servlet-5.0</feature>
+        <feature>pages-3.0</feature>
+        <feature>cdi-3.0</feature>
+        <feature>expressionLanguage-4.0</feature>
     </featureManager>
 
     <httpEndpoint id="defaultHttpEndpoint" 
